@@ -16,7 +16,7 @@ const corsOptions = {
 } 
 
 app.use(cors())                                                                             
-app.use('/api/user',cors(corsOptions),user)
+app.use('/api/users',cors(corsOptions),user)
 app.listen('8080',()=>{
     console.log('koneksi ke server berhasil')
 })

@@ -21,6 +21,7 @@ exports.signup = async(req,res) => {
 }
 
 exports.signin = (req,res) => {
+    console.log(req.body.username)
     Users_login.findOne({where:{username:req.body.username}}).then(user=>{
         if(!user){
             return res.status(404).json({message:'The user has not been registered'})
