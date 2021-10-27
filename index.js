@@ -3,6 +3,7 @@ const app = express()
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const user = require('./Router/Users.Router')
+const product= require('./Router/Products.Router')
 const db = require('./Database/database')
 db.sync({force:false});
 app.use(bodyParser.json())
@@ -17,6 +18,7 @@ const corsOptions = {
 
 app.use(cors())                                                                             
 app.use('/api/users',cors(corsOptions),user)
+app.use('/api/product',cors(corsOptions),product)
 app.listen('8080',()=>{
     console.log('koneksi ke server berhasil')
 })
