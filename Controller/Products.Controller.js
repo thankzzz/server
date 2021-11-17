@@ -17,7 +17,6 @@ exports.getDataProduct = async(req,res) =>{
     }
     const findBrand = (id) => {
         let index = brand.findIndex(c=>c.id === id)
-        console.log(index)
         if(index < 0){
             return ''
         }

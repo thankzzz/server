@@ -30,7 +30,7 @@ exports.signin = (req,res) => {
         if(!passwordValid){
             return res.status(404).send({accessToken:null,message:'Invalid password'})
         }
-        var token = jwt.sign({id:user.id},process.env.JWT_SECRET,{expiresIn:14400})
+        var token = jwt.sign({id:user.id},process.env.JWT_SECRET,{expiresIn:7200})
         res.status(200).json({
             id: user.id,
             username: user.username,
